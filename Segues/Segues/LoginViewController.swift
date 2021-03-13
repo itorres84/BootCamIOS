@@ -10,15 +10,22 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var txtEmail: UITextField!
+    @IBOutlet weak var txtPassword: UITextField!
+    
+    let userRepository = UserRepository()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
     
-   
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
           
+        if let identifier = segue.identifier,
+               identifier.elementsEqual("goToHome") {
+            return
+        }
+        
         guard let text = txtEmail.text,
               !text.isEmpty,
               let identifier = segue.identifier,
@@ -33,6 +40,18 @@ class LoginViewController: UIViewController {
         
         recoveryPasswordVC.email = text
                         
+    }
+    
+    @IBAction func SingIn(_ sender: UIButton) {
+            
+        guard let email = txtEmail.text, let password = txtPassword.text else {
+            return
+        }
+        
+        if userRepository.login(userParam: email , passwordParam: password) {
+            performSegue(withIdentifier: "goToHome", sender: nil)
+        }
+        
     }
     
 }

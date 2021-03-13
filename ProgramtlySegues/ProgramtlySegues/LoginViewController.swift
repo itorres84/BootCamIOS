@@ -10,6 +10,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     private let titleScreen = "Iniciar sesion"
+    private let repository = UserRepository()
     
     private lazy var txtEmail: UITextField = {
         let email = UITextField()
@@ -17,6 +18,7 @@ class LoginViewController: UIViewController {
         email.placeholder = "Email"
         email.keyboardType = .emailAddress
         email.backgroundColor = UIColor.gray
+        email.text = "aprendeDev@mail.com"
         return email
     }()
     
@@ -27,8 +29,22 @@ class LoginViewController: UIViewController {
         password.keyboardType = .default
         password.isSecureTextEntry = true
         password.backgroundColor = UIColor.gray
+        password.text = "1234567890"
         return password
     }()
+    
+    private lazy var btnSingIn: UIButton = {
+      
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .blue
+        button.setTitle("Iniciar sesion", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.addTarget(self, action: #selector(TapButtonAction(_:)), for: .touchUpInside)
+        button.tag = 3
+        return button
+    }()
+    
     
     private lazy var btnSingup: UIButton = {
       
@@ -63,6 +79,7 @@ class LoginViewController: UIViewController {
         view.addSubview(txtPassword)
         view.addSubview(btnSingup)
         view.addSubview(btnRecoveryPassword)
+        view.addSubview(btnSingIn)
         
         addConstraits()
         
@@ -100,7 +117,13 @@ class LoginViewController: UIViewController {
             btnRecoveryPassword.heightAnchor.constraint(equalToConstant: 50)
         ])
         
-
+        NSLayoutConstraint.activate([
+            btnSingIn.topAnchor.constraint(equalTo: txtPassword.bottomAnchor, constant: 50),
+            btnSingIn.leftAnchor.constraint(equalTo: layaout.leftAnchor),
+            btnSingIn.rightAnchor.constraint(equalTo: layaout.rightAnchor),
+            btnSingIn.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
     }
     
     @objc func TapButtonAction(_ sender: UIButton) {
@@ -126,7 +149,40 @@ class LoginViewController: UIViewController {
 //            navigationController?.show(recoveryPasswordVC, sender: nil)
             
             //self.navigationController?.present(recoveryPasswordVC, animated: true, completion: nil)
-        
+    
+        case 3:
+            
+            print("Go To Home")
+            guard let email = txtEmail.text, let password = txtPassword.text else {
+                return
+            }
+            
+            if repository.login(userParam: email , passwordParam: password) {
+            
+                let item = UITabBarItem()
+                item.image = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
+                item.selectedImage = UIImage(named: "home")?.withRenderingMode(.alwaysOriginal)
+                let homeVC = HomeViewController()
+                homeVC.tabBarItem = item
+                let navigationControll = UINavigationController(rootViewController: homeVC)
+                
+                let itemProfile = UITabBarItem()
+                itemProfile.title = "Profile"
+                itemProfile.image = UIImage(named: "user")?.withRenderingMode(.alwaysOriginal)
+                itemProfile.selectedImage = UIImage(named: "user")?.withRenderingMode(.alwaysOriginal)
+                let profileVC = ProfileViewController()
+                profileVC.tabBarItem = itemProfile
+                
+                let tabbarController = UITabBarController()
+                tabbarController.viewControllers = [navigationControll, profileVC]
+                tabbarController.modalPresentationStyle = .fullScreen
+                
+                self.present(tabbarController, animated: true, completion: nil)
+            
+                
+            }
+            
+            
         default:
             break
         }

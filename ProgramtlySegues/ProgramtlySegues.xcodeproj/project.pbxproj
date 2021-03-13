@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		779CBF9425FB0786008BE4FA /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779CBF9325FB0786008BE4FA /* UserRepository.swift */; };
+		779CBF9825FB084D008BE4FA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779CBF9625FB084D008BE4FA /* HomeViewController.swift */; };
+		779CBF9925FB084D008BE4FA /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779CBF9725FB084D008BE4FA /* HomeViewController.xib */; };
+		779CBF9D25FB0BBE008BE4FA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779CBF9B25FB0BBE008BE4FA /* ProfileViewController.swift */; };
+		779CBF9E25FB0BBE008BE4FA /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779CBF9C25FB0BBE008BE4FA /* ProfileViewController.xib */; };
+		779CBFA225FB0C91008BE4FA /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779CBFA025FB0C91008BE4FA /* HomeDetailViewController.swift */; };
+		779CBFA325FB0C91008BE4FA /* HomeDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779CBFA125FB0C91008BE4FA /* HomeDetailViewController.xib */; };
 		77B7F5D125F9A51000F9E9DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7F5D025F9A51000F9E9DE /* AppDelegate.swift */; };
 		77B7F5D325F9A51000F9E9DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7F5D225F9A51000F9E9DE /* SceneDelegate.swift */; };
 		77B7F5D525F9A51000F9E9DE /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B7F5D425F9A51000F9E9DE /* LoginViewController.swift */; };
@@ -18,6 +25,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		779CBF9325FB0786008BE4FA /* UserRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		779CBF9625FB084D008BE4FA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		779CBF9725FB084D008BE4FA /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		779CBF9B25FB0BBE008BE4FA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		779CBF9C25FB0BBE008BE4FA /* ProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		779CBFA025FB0C91008BE4FA /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
+		779CBFA125FB0C91008BE4FA /* HomeDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeDetailViewController.xib; sourceTree = "<group>"; };
 		77B7F5CD25F9A51000F9E9DE /* ProgramtlySegues.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProgramtlySegues.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77B7F5D025F9A51000F9E9DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		77B7F5D225F9A51000F9E9DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		779CBF9225FB0786008BE4FA /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				779CBF9325FB0786008BE4FA /* UserRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
 		77B7F5C425F9A51000F9E9DE = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +82,7 @@
 		77B7F5CF25F9A51000F9E9DE /* ProgramtlySegues */ = {
 			isa = PBXGroup;
 			children = (
+				779CBF9225FB0786008BE4FA /* Repository */,
 				77B7F5D025F9A51000F9E9DE /* AppDelegate.swift */,
 				77B7F5D225F9A51000F9E9DE /* SceneDelegate.swift */,
 				77B7F5D425F9A51000F9E9DE /* LoginViewController.swift */,
@@ -69,6 +92,12 @@
 				77B7F5F925F9B3D400F9E9DE /* SingUpViewController.swift */,
 				77B7F5FA25F9B3D400F9E9DE /* SingUpViewController.xib */,
 				77B7F5FE25F9B70600F9E9DE /* RecoveryPasswordViewController.swift */,
+				779CBF9625FB084D008BE4FA /* HomeViewController.swift */,
+				779CBF9725FB084D008BE4FA /* HomeViewController.xib */,
+				779CBF9B25FB0BBE008BE4FA /* ProfileViewController.swift */,
+				779CBF9C25FB0BBE008BE4FA /* ProfileViewController.xib */,
+				779CBFA025FB0C91008BE4FA /* HomeDetailViewController.swift */,
+				779CBFA125FB0C91008BE4FA /* HomeDetailViewController.xib */,
 			);
 			path = ProgramtlySegues;
 			sourceTree = "<group>";
@@ -133,6 +162,9 @@
 				77B7F5FC25F9B3D400F9E9DE /* SingUpViewController.xib in Resources */,
 				77B7F5DD25F9A51100F9E9DE /* LaunchScreen.storyboard in Resources */,
 				77B7F5DA25F9A51100F9E9DE /* Assets.xcassets in Resources */,
+				779CBF9E25FB0BBE008BE4FA /* ProfileViewController.xib in Resources */,
+				779CBFA325FB0C91008BE4FA /* HomeDetailViewController.xib in Resources */,
+				779CBF9925FB084D008BE4FA /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,8 +177,12 @@
 			files = (
 				77B7F5D525F9A51000F9E9DE /* LoginViewController.swift in Sources */,
 				77B7F5D125F9A51000F9E9DE /* AppDelegate.swift in Sources */,
+				779CBF9425FB0786008BE4FA /* UserRepository.swift in Sources */,
+				779CBFA225FB0C91008BE4FA /* HomeDetailViewController.swift in Sources */,
 				77B7F5FB25F9B3D400F9E9DE /* SingUpViewController.swift in Sources */,
 				77B7F5D325F9A51000F9E9DE /* SceneDelegate.swift in Sources */,
+				779CBF9825FB084D008BE4FA /* HomeViewController.swift in Sources */,
+				779CBF9D25FB0BBE008BE4FA /* ProfileViewController.swift in Sources */,
 				77B7F5FF25F9B70600F9E9DE /* RecoveryPasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
