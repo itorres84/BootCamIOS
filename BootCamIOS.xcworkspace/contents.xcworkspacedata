@@ -3,6 +3,16 @@
    version = "1.0">
    <Group
       location = "container:"
+      name = "Modulo7">
+      <FileRef
+         location = "group:TeamsFootball/TeamsFootball.xcodeproj">
+      </FileRef>
+      <FileRef
+         location = "group:TableSimple/TableSimple.xcodeproj">
+      </FileRef>
+   </Group>
+   <Group
+      location = "container:"
       name = "Modulo1">
       <FileRef
          location = "group:Optionales.playground">
@@ -34,7 +44,7 @@
    </Group>
    <Group
       location = "container:"
-      name = "Modulo2">
+      name = "Modulo6">
       <FileRef
          location = "group:ProgramtlySegues/ProgramtlySegues.xcodeproj">
       </FileRef>
